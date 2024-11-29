@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+.git
+.giithub
+*.lock
+_posts/9999-*

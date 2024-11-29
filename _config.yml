@@ -1,0 +1,62 @@
+title: Haewon's blog
+#description: My Personal Stack Problems
+author: Haewon Shin
+github: https://github.com/haewons-tanzu
+about: Staff Solution Engineer @ VMware Tanzu, OFFICE OF THE CTO, Ambassador
+disqus_shortname: hewons
+#google_analytics: UA-XXXXXXXX-Y
+
+enableTags: true
+tagarray: []
+
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
+
+social:
+    - icon: fa-facebook
+      link: "#"
+    - icon: fa-twitter
+      link: "#"
+    - icon: fa-linkedin
+      link: "https://www.linkedin.com/in/haewonshin/"
+    - icon: fa-stack-exchange
+      link: "#"
+    - icon: fa-github
+      link: "https://github.com/haewons-tanzu"
+
+share:
+  twitter_username: github.io
+  fb_appid: 1749788565247320
+
+urls:
+    - text: About Me
+      url: /about/
+    - text: My Public Seminar
+      url: /seminars/
+    - text: Tanzu Platform 구성
+      url: /tp/
+#    - text: Tanzu 구성
+#      url: /poc/
+    #- text: My Projects
+    #  url: /projects/
+    - text: XML Feed
+      url: /feed.xml
+
+url: "https://haewons-tanzu.github.io"
+baseurl: ""
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
+markdown: kramdown
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']

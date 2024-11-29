@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /seminars
+Allow: /
+
+Sitemap: https://haewons-tanzu.github.io/sitemap.xml
+
