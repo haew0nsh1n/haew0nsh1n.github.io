@@ -1,7 +1,7 @@
 title: Haewon's blog
 #description: My Personal Stack Problems
 author: Haewon Shin
-github: https://github.com/haewons-tanzu
+github: https://github.com/haew0nsh1n
 about: Staff Solution Engineer @ VMware Tanzu, OFFICE OF THE CTO, Ambassador
 disqus_shortname: hewons
 #google_analytics: UA-XXXXXXXX-Y
@@ -24,7 +24,7 @@ social:
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/haewons-tanzu"
+      link: "https://github.com/haew0nsh1n"
 
 share:
   twitter_username: github.io
@@ -33,8 +33,8 @@ share:
 urls:
     - text: About Me
       url: /about/
-    - text: My Public Seminar
-      url: /seminars/
+    #- text: My Public Seminar
+    #  url: /seminars/
     - text: Tanzu Platform 구성
       url: /tp/
 #    - text: Tanzu 구성
@@ -44,7 +44,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://haewons-tanzu.github.io"
+url: "https://haew0nsh1n.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
