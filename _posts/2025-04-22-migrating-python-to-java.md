@@ -6,7 +6,7 @@ categories: [ghcp]
 
 이번 포스팅은 [2025년 4월 26일(토)에 진행될 GitHub Copilot BootCamp](https://event-us.kr/msftkrdevrel/event/101808?utm_source=eventus&utm_medium=organic&utm_campaign=channel-event) 중 자바 세션의 진행 과정을 정리하였습니다.
 
-본 이벤트에서 진행된 전체 시나리오 및 소스코드는 [https://github.com/devrel-kr/github-copilot-bootcamp-2025/](여기)에서 확인하시기 바랍니다.
+본 이벤트에서 진행된 전체 시나리오 및 소스코드는 [여기](https://github.com/devrel-kr/github-copilot-bootcamp-2025/)에서 확인하시기 바랍니다.
 
 ## 0. 사전 준비사항
 
@@ -60,16 +60,16 @@ host: '0.0.0.0',
 ## 1. 마이그레이션 순서 리뷰
 이제 마이그레이션을 할 준비가 되었습니다. Python 앱으로부터 Spring Boot 앱으로의 전체적인 마이그레이션 과정은 다음과 같습니다.
 
-- [Python 앱 로직 확인](#python-앱-로직-확인)
+- [Python 앱 로직 확인](#2-python-앱-로직-확인)
   - [SQLite 데이터베이스 확인](#SQLite-데이터베이스-확인)
-- [Spring Boot 앱으로 마이그레이션](#spring-boot-앱으로-마이그레이션)
+- [Spring Boot 앱으로 마이그레이션](#3-spring-boot-앱으로-마이그레이션)
   - [Spring Boot 프로젝트 생성](#spring-boot-프로젝트-생성)
   - [빌드 및 앱 구동](#빌드-및-앱-구동)
   - [Code Instruction 생성](#code-instruction-생성)
   - [REST API 추가 및 확인](#rest-api-추가-및-확인)
   - [Python에 작성된 REST API 추가](#python에-작성된-rest-api-추가)
   - [Database 설정 구성](#database-설정-구성)
-- [백엔드 앱 전환 및 확인](#백엔드-앱-전환-및-확인)
+- [백엔드 앱 전환 및 확인](#4-백엔드-앱-전환-및-확인)
   - [확인](#확인)
 
 ## 2. Python 앱 로직 확인
@@ -266,21 +266,24 @@ spring.datasource.url=jdbc:sqlite:sns.db
 
 ### 확인
 
-이제 모든 코드 생성이 완료되었습니다. 마지막으로 Node JS로 작성된 프론트엔드 앱에서 기존 URL과 동일하게 호출할 수 있도록 Spring Boot 앱의 포트를 변경합니다. 
+이제 모든 코드 생성이 완료되었습니다. 마지막으로 Javascript로 작성된 프론트엔드 앱에서 기존 URL과 동일하게 호출할 수 있도록 Spring Boot 앱의 포트를 변경합니다. 
 
 변경 전 [여기](01-python.md#서비스-종료)를 참고하여 Python 앱을 구동 중지합니다. 
+```
+lsof -i:8000 | xargs kill -9
+```
 
 
 포트 변경을 위한 설정을 변경하기 위해 GitHub Copilot에 다음과 같이 프롬프트를 입력합니다.
 
 ```
-앱 서비스 포트를 8080으로 변경해줘
+앱 서비스 포트를 8000으로 변경해줘
 ```
 
 이제 앱을 다시 빌드하고 구동시켜서 다음 URL로 접속이 되는지를 확인합니다.
 
 ```
-https://localhost:8080/swagger-ui.html
+https://localhost:8000/swagger-ui.html
 ```
 
 앱이 정상적으로 구동되었으면 Node JS 프론트엔드 앱을 호출하여 앱에 이상이 없는지 확인합니다.
