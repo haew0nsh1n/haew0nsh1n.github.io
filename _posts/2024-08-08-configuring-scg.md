@@ -8,20 +8,20 @@ Tanzu Platform에서 기본적으로 제공하는 쿠버네티스 게이트웨�
 
 ## 1. Spring Cloud Gateway 구성
 먼저 Spring Cloud Gateway를 사용할 수 있는지 확인한다. Space에서 사용하는 Profile을 확인한 뒤, 해당 프로파일을 클릭하여 설치된 Traits 정보에 Spring Cloud Gateway가 있는지 확인한다. 만약 없다면 추가로 선택하여 설치한다.
-![configuring-scg 1](../static/img/_posts/2024-08-08-configuring-scg/1.png)
+![configuring-scg 1](https://raw.githubusercontent.com/haew0nsh1n/haew0nsh1n.github.io/master/static/img/_posts/2024-08-08-configuring-scg/1.png)
 
 기본 설정으로 두어도 동작하는데는 지장이 없지만, 고가용성을 고려하여 replica 개수를 조정하거나, 리소스에 대한 제한을 거는 설정을 조정할 수 있다. 이와 관련된 설정 값은 다음과 같다.
 - Count: 1 (기본값)
 - resources 하위 항목: CPU, 메모리 리소스 설정 (필요 시)
 
-![configuring-scg 2](../static/img/_posts/2024-08-08-configuring-scg/2.png)
+![configuring-scg 2](https://raw.githubusercontent.com/haew0nsh1n/haew0nsh1n.github.io/master/static/img/_posts/2024-08-08-configuring-scg/2.png)
 
 기본 값으로 설정하고 프로파일을 업데이트 한 뒤, 파드들의 변동을 확인해 보면 다음과 같다.
 ```bash
 $ kubectl get po -A
 ```
 
-![configuring-scg 3](../static/img/_posts/2024-08-08-configuring-scg/3.png)
+![configuring-scg 3](https://raw.githubusercontent.com/haew0nsh1n/haew0nsh1n.github.io/master/static/img/_posts/2024-08-08-configuring-scg/3.png)
 
 위의 스크린샷에서 구동된 파드들에 대한 설명은 다음과 같다. 
 1. 기존에 설정되었던 게이트웨이에 대한 정보가 변경되면서 파드가 재구동 되고 있음
@@ -119,10 +119,10 @@ $ tanzu deploy -y
 ```
 
 이전에 수행했던 것과 마찬가지로, "Application Spaces" > "Spaces" 메뉴에서 나의 스페이스로 접속한다. "Network Topology"에 각 파드들 간의 연결 정보를 확인한다.
-![configuring-scg 4](../static/img/_posts/2024-08-08-configuring-scg/4.png)
+![configuring-scg 4](https://raw.githubusercontent.com/haew0nsh1n/haew0nsh1n.github.io/master/static/img/_posts/2024-08-08-configuring-scg/4.png)
 
 토폴로지가 정상적으로 표시되는 것을 확인한 후, "Ingress & Egress" 탭을 클릭하여 앱 접속을 위한 URL을 획득한다.
-![configuring-scg 5](../static/img/_posts/2024-08-08-configuring-scg/5.png)
+![configuring-scg 5](https://raw.githubusercontent.com/haew0nsh1n/haew0nsh1n.github.io/master/static/img/_posts/2024-08-08-configuring-scg/5.png)
 
 주어진 웹 URL을 통해 앱이 정상적으로 접속되는 것을 확인한다.
 
