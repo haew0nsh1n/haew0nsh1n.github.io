@@ -34,7 +34,7 @@ gp2 (default)   kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   f
 ### 서비스 생성
 서비스를 생성하기 위해서는 "Application Spaces" > "Spaces" 메뉴에서 나의 스페이스(예. my-first-space)로 접속한다. "Services" 탭을 클릭하고, 우측 상단의 "CREATE SERVICE" 버튼을 클릭하여 사용할 수 있는 서비스 목록을 조회한다.
 
-![binding-services-on-tpk8s 1](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-07-binding-services-on-tpk8s/1.png)
+![binding-services-on-tpk8s 1](../static/img/_posts/2024-08-07-binding-services-on-tpk8s/1.png)
 
 서비스를 생성하기 위해 다음과 같이 입력한다. MySQL 서비스를 생성하기 위한 설정 값은 다음과 같다. 
 - Provision Type: Dynamic Provision Flow
@@ -44,7 +44,7 @@ gp2 (default)   kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   f
 
 설정 값들을 입력하고 "CREATE SERVICE" 버튼을 클릭하여 서비스를 생성한다.
 
-![binding-services-on-tpk8s 2](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-07-binding-services-on-tpk8s/2.png)
+![binding-services-on-tpk8s 2](../static/img/_posts/2024-08-07-binding-services-on-tpk8s/2.png)
 
 ### 서비스 바인드
 생성된 서비스를 앱과 바인딩 하기 위해 우측 상단의 "BIND TO APPLICATION" 버튼을 클릭한다. 테스트를 위해, 이전에 생성한 tanzu-java-web-app과 바인드 시키기 위해 다음과 같이 입력한다.
@@ -54,7 +54,7 @@ gp2 (default)   kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   f
 
 값 입력 후, "CREATE SERVICE BINDINGS"를 클릭하여 서비스를 바인딩한다. 성공적으로 바인딩 되었으면 다음과 같은 화면이 나타난다.
 
-![binding-services-on-tpk8s 3](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-07-binding-services-on-tpk8s/3.png)
+![binding-services-on-tpk8s 3](../static/img/_posts/2024-08-07-binding-services-on-tpk8s/3.png)
 
 ### 서비스 언바인드
 서비스를 앱과 언바인드 시키려면 언바운드할 앱 옆에 위치한 "UNBIND" 버튼을 클릭한다.
@@ -69,7 +69,7 @@ gp2 (default)   kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   f
 $ tanzu service type list
 ```
 
-![binding-services-on-tpk8s 4](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-07-binding-services-on-tpk8s/4.png)
+![binding-services-on-tpk8s 4](../static/img/_posts/2024-08-07-binding-services-on-tpk8s/4.png)
 
 또한 서비스들을 tanzu CLI를 이용하여 생성, 삭제, 바인드 할 수 있으나, 여기서는 YAML 파일들을 활용해서 앱 배포 시 함께 서비스를 관리하는 방법에 대해 살펴보겠다.
 
@@ -145,4 +145,4 @@ $ tanzu deploy -y
 
 [http://spring-music.tanzu-hub.tanzukorea.org/](http://spring-music.tanzu-hub.tanzukorea.org/)
 
-![binding-services-on-tpk8s 5](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-07-binding-services-on-tpk8s/5.png)
+![binding-services-on-tpk8s 5](../static/img/_posts/2024-08-07-binding-services-on-tpk8s/5.png)

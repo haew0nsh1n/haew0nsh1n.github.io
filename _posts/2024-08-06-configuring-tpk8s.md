@@ -13,7 +13,7 @@ categories: [tp, tpk8s]
 ### 1) 프로젝트 생성
 Tanzu Platform에 접속해서 좌측 하단의 "Setup & Configuration" > "Projects"를 클릭한다. "NEW PROJECT"를 클릭하여, 원하는 프로젝트를 생성한다. 만약 버튼을 클릭할 수 없다면 권한이 없는 것이므로 [VCS(VMWare Cloud Services) 콘솔](https://console.cloud.vmware.com/)에서 부여받은 권한을 확인한다. VCS 메뉴 우측 상단의 "My Account"를 클릭하고, "Identity & Access Management" > "Active Users"에서 다음과 같이 나의 권한을 확인할 수 있다. 단, 부여받은 권한은 사용자 별로 상이할 수 있다.
 
-![configuring-tpk8s 1](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/1.png)
+![configuring-tpk8s 1](../static/img/_posts/2024-08-06-configuring-tpk8s/1.png)
 
 ### 2) Tanzu CLI 및 플러그인 설치
 Tanzu Platform 접속을 위해서는 v1.3.x 이상의 Tanzu CLI 설치가 필요하다. 2024년 8월 현재 v1.4.x가 최신 버전이며, 맥북 기준으로는 brew를 사용하여 다음과 같이 설치할 수 있다.
@@ -104,7 +104,7 @@ Route 53 GSLB용 크리덴셜 생성 방법도 유사하다.
 
 "Next" 버튼을 클릭한 이후는 앞에서 설명한 크리덴셜 생성 방법과 동일하므로 설명을 생략한다. 스택이 생성된 후 설정이 완료되면 다음과 같이 완료 메세지를 확인할 수 있다.
 
-![configuring-tpk8s 2](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/2.png)
+![configuring-tpk8s 2](../static/img/_posts/2024-08-06-configuring-tpk8s/2.png)
 
 ## 2. Cluster Group 생성 (Optional)
 클러스터 그룹은 클러스터들의 논리적 집합으로, 이 구성을 통해 그룹 내의 모든 클러스터의 구성을 한번에 적용하여 관리할 수 있다. 
@@ -137,12 +137,12 @@ Application Engine이란 앱이 구동되는데 필요한 여러 패키지들(Ca
   ```
   발생되는 에러는 다음과 같다.
 
-  ![configuring-tpk8s 3](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/3.png)
+  ![configuring-tpk8s 3](../static/img/_posts/2024-08-06-configuring-tpk8s/3.png)
 
 - registry: 이미지 레지스트리 주소
 
 설치가 정상적으로 완료되면 신규로 생성된 클러스터 그룹에 대하여(여기서는 kr-run) 다음과 같이 Capabilities 목록을 확인할 수 있다.
-![configuring-tpk8s 4](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/4.png)
+![configuring-tpk8s 4](../static/img/_posts/2024-08-06-configuring-tpk8s/4.png)
 
 ## 3. EKS 클러스터 설치
 Tanzu Platform에서 EKS 클러스터를 설치하면 클러스터 생성, 삭제, 업그레이드, 스케일 등의 클러스터 라이프사이클을 관리할 수 있다. "Infrastructure" > "Kubernetes Clusters" 메뉴를 클릭한 후 "Clusters" 탭에서 "ADD CLUSTER" > "Create AWS EKS cluster" 메뉴를 선택한다. 다음 값들을 입력한 후 "Next" 버튼을 클릭한다.
@@ -169,11 +169,11 @@ Tanzu Platform에서 EKS 클러스터를 설치하면 클러스터 생성, 삭�
 > **NOTE**
 > 클러스터 설치 이후에 관련 패키지가 설치된다. Tanzu Platform의 클러스터 정보 조회 화면에서는 패키지의 정상 설치 여부까지는 나오지 않으므로 다음과 같이 클러스터와 컴포넌트가 "Ready" 상태이더라도 추가 확인이 필요하다.
 
-![configuring-tpk8s 5](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/5.png)
+![configuring-tpk8s 5](../static/img/_posts/2024-08-06-configuring-tpk8s/5.png)
 
 클러스터에 접근하기 위해 위 화면 우측 상단의 "ACTION" > "Access this cluster"를 클릭한다. 
 
-![configuring-tpk8s 6](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/6.png)
+![configuring-tpk8s 6](../static/img/_posts/2024-08-06-configuring-tpk8s/6.png)
 
 위와 같은 화면이 나오면 kubeconfig 설정을 다운로드하고, kubectl CLI를 이용하여 클러스터 접속 가능 여부를 확인한다.
 
@@ -186,7 +186,7 @@ $ kubectl get node -o wide
 $ kubectl get pkgr -A
 ```
 
-![configuring-tpk8s 7](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/7.png)
+![configuring-tpk8s 7](../static/img/_posts/2024-08-06-configuring-tpk8s/7.png)
 
 > **NOTE**
 > 만약 vss-k8s-collector-repo 패키지가 설치되지 않았다면, 다음과 같은 과정으로 클러스터를 재생성한다. 이 과정은 동일 이름일 경우 이전 설정 정보를 Tanzu Platform에서 인식하고 있어서 발생한다. 대부분의 경우 클러스터 그룹 생성 후 Capabilities를 설치하지 않아서 발생하므로, 위의 과정을 정상적으로 수행하였다면 패키지가 설치되지 않을 일은 없다.
@@ -237,7 +237,7 @@ Availability Target은 리전, Fault Domain 등 서비스 고가용성과 관련
 
 Availability Target 생성이 완료되면, 이전에 생성했던 클러스터(여기서는 my-cluster-1)가 다음과 같이 보이는 것을 알 수 있다. 만약 클러스터가 보이지 않는다면, 생성된 클러스터의 리전과 Availability Target에 지정한 리전이 일치하지 않는다는 것이므로, 조건을 다시 한 번 확인해 보도록 한다.
 
-![configuring-tpk8s 8](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/8.png)
+![configuring-tpk8s 8](../static/img/_posts/2024-08-06-configuring-tpk8s/8.png)
 
 ### 3) 스페이스 생성
 스페이스는 앱이 구성되는 환경이다. 이 역시 "Availability Target" 구성과 마찬가지로 두 가지 방식을 지원한다. 여기서는 "Step by Step"를 이용해서 설정하는 방식에 대해 설명한다.
@@ -251,7 +251,7 @@ Availability Target 생성이 완료되면, 이전에 생성했던 클러스터(
 
 설정값을 지정한 후 스페이스를 생상한다. 스페이스가 생성되고 프로파일에서 지정한 Capabilities들이 클러스터에 직접 구성되므로 약간의 시간이 필요하며, 생성 시간은 약 5분 이내이다. 구성이 완료되면 쿠버네티스 클러스터에서 스페이스가 제대로 생성되었는지 확인한다. 정상적으로 생성되었다면 다음과 같이 쿠버네티스 클러스터에 스페이스 명을 접두어로 가지는 네임스페이스 2개가 생성된다.
  
-![configuring-tpk8s 9](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/9.png)
+![configuring-tpk8s 9](../static/img/_posts/2024-08-06-configuring-tpk8s/9.png)
 
 
 ## 5. 스페이스 접속 확인
@@ -409,16 +409,16 @@ $ tanzu deploy --from-build build-output -y
 ### 3) 앱 접속 확인
 "Application Spaces" > "Spaces" 메뉴에서 나의 스페이스로 접속한다. 앱이 정상적으로 구동되었다면 다음과 같이 "Network Topology"에 각 파드들 간의 연결 정보를 확인할 수 있을 것이다.
 
-![configuring-tpk8s 10](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/10.png)
+![configuring-tpk8s 10](../static/img/_posts/2024-08-06-configuring-tpk8s/10.png)
 
 토폴로지가 정상적으로 표시되는 것을 확인한 후, "Ingress & Egress" 탭을 클릭하여 앱 접속을 위한 URL을 획득한다.
-![configuring-tpk8s 11](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/11.png)
+![configuring-tpk8s 11](../static/img/_posts/2024-08-06-configuring-tpk8s/11.png)
 
 획득한 URL을 웹브라우저에 접속해서 앱이 정상적으로 구동되는지를 확인한다.
 
 [http://tanzu-java-web-app.tanzu-hub.tanzukorea.org](http://tanzu-java-web-app.tanzu-hub.tanzukorea.org)
 
-![configuring-tpk8s 12](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2024-08-06-configuring-tpk8s/12.png)
+![configuring-tpk8s 12](../static/img/_posts/2024-08-06-configuring-tpk8s/12.png)
 
 이로써 Tanzu Platform 환경을 구성하고 앱을 배포해 보는 과정이 완료되었다. 좀 더 자세한 내용은 아래 링크를 접속하여 Tanzu Platform 매뉴얼에서 확인할 수 있다.
 

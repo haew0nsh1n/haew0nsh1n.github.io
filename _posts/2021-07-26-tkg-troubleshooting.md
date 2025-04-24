@@ -93,7 +93,7 @@ $ kubectl get po -A
 ```
 
 Then I can see as below.
-![tkg-troubleshooting 1](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2021-07-26-tkg-troubleshooting/1.png)
+![tkg-troubleshooting 1](../static/img/_posts/2021-07-26-tkg-troubleshooting/1.png)
 
 I can see a pod named capz-controller-manager in capz-system namespace. This is the pod which shows logs during being executed APIs in Azure.
 ```shell
@@ -113,7 +113,7 @@ E0727 22:10:45.518001       1 controller.go:257] controller-runtime/controller "
 ```
 
 Now, my new TKC cluster was created!!
-![tkg-troubleshooting 2](https://raw.githubusercontent.com/haew0nsh1n/haewons-contents/master/static/img/_posts/2021-07-26-tkg-troubleshooting/2.png)
+![tkg-troubleshooting 2](../static/img/_posts/2021-07-26-tkg-troubleshooting/2.png)
 
 For more information, please refer this.
 * [Troubleshooting Tips for Tanzu Kubernetes Grid](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.3/vmware-tanzu-kubernetes-grid-13/GUID-troubleshooting-tkg-tips.html)
