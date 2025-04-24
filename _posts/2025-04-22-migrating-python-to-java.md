@@ -61,7 +61,7 @@ host: '0.0.0.0',
 이제 마이그레이션을 할 준비가 되었습니다. Python 앱으로부터 Spring Boot 앱으로의 전체적인 마이그레이션 과정은 다음과 같습니다.
 
 - [Python 앱 로직 확인](#2-python-앱-로직-확인)
-  - [SQLite 데이터베이스 확인](#SQLite-데이터베이스-확인)
+  - [SQLite 데이터베이스 확인](#sqlite-데이터베이스-확인)
 - [Spring Boot 앱으로 마이그레이션](#3-spring-boot-앱으로-마이그레이션)
   - [Spring Boot 프로젝트 생성](#spring-boot-프로젝트-생성)
   - [빌드 및 앱 구동](#빌드-및-앱-구동)
@@ -286,7 +286,7 @@ lsof -i:8000 | xargs kill -9
 https://localhost:8000/swagger-ui.html
 ```
 
-앱이 정상적으로 구동되었으면 Node JS 프론트엔드 앱을 호출하여 앱에 이상이 없는지 확인합니다.
+앱이 정상적으로 구동되었으면 JAvascript 프론트엔드 앱을 호출하여 앱에 이상이 없는지 확인합니다.
 
 ```
 http://localhost:3000
